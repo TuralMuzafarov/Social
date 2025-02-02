@@ -9,10 +9,11 @@ import (
 )
 
 func main() {
-	err := godotenv.Load()
+	err := godotenv.Load("../../.env")
 
 	if err != nil {
 		log.Printf("Could not load the environment variables... \n")
+		log.Println(err)
 		time.Sleep(time.Second * 3)
 		log.Println("System is starting with default configurations")
 	}
